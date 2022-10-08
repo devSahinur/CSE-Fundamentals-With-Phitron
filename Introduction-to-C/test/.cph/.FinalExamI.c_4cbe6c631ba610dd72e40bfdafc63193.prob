@@ -1,0 +1,1 @@
+{"name":"Local: FinalExamI","url":"e:\\Introduction-to-C\\test\\FinalExamI.c","tests":[{"id":1665117491381,"input":"2","output":"25"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Introduction-to-C\\test\\FinalExamI.c","group":"local","local":true}
