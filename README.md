@@ -51,3 +51,13 @@
 - String IO
 - Length of string
 - String functions
+## Lecture 8
+
+- Stucture
+- Binary Number System
+- Bitwise Operator
+
+## Lecture 9
+
+- Function
+- Pointers
