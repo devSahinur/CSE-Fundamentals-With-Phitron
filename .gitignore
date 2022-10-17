@@ -1,4 +1,7 @@
 *.exe
 *.o
+*.bin
+*.cph
+
 
 /test
