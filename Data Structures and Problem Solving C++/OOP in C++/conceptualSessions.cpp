@@ -13,13 +13,6 @@ public:
         float sum = 0;
         for (int i = 0; i < 5; i++)
         {
-            if (arr[i] < 100 || arr[i] < 0)
-            {
-                cout << "Invalid Number .Enter a valid number";
-                int num;
-                cin >> num;
-                arr[i] = num;
-            }
             marks[i] = arr[i];
             if (arr[i] >= 80)
             {
