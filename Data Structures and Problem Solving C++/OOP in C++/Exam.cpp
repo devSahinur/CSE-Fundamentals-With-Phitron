@@ -8,28 +8,7 @@ public:
     string food_item_names;
     int food_item_prices;
     int total_tax;
-
-    // Restaurant(int food_item_codes, string food_item_names, int food_item_prices, int total_tax)
-    // {
-    //     this->food_item_codes = food_item_codes;
-    //     this->food_item_names = food_item_names;
-    //     this->food_item_prices = food_item_prices;
-    //     this->total_tax = 0;
-    //     cout<<"hello";
-    // }
 };
-
-// void foodItem(int num)
-// {
-//     int food_item_codes, food_item_prices;
-//     string food_item_names;
-//     cin >> food_item_codes;
-//     cout << endl;
-//     cin >> food_item_names;
-//     cout << endl;
-//     cin >> food_item_prices;
-
-// }
 
 int main()
 {
@@ -42,16 +21,21 @@ int main()
         int food_item_codes, food_item_prices;
         string food_item_names;
         cin >> food_item_codes;
-        getline(cin,food_item_names);
+        getchar();
+        getline(cin, food_item_names);
         cin >> food_item_prices;
         restaurant[i].food_item_codes = food_item_codes;
         restaurant[i].food_item_names = food_item_names;
         restaurant[i].food_item_prices = food_item_prices;
     }
 
+    cout<<"... \t\t\t\t  "<<"MAKE BILL"<<" \t \t \t... \n";
+    cout<<" \t\t\t\t "<<"_______________"<<" \t\t \t \t\n";
+    cout<<"Item Code \t\t\t"<<"Item Name"<<" \t\t\t\t Item Price ";
     for (int i = 0; i < n; i++)
     {
-        cout << restaurant[i].food_item_codes << endl;
+
+        cout << endl<< restaurant[i].food_item_codes << " \t \t\t\t" << restaurant[i].food_item_names << " \t\t \t \t" << restaurant[i].food_item_codes;
     }
 
     return 0;
