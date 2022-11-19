@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdbool.h>
-
-int main()
+void solve()
 {
     int a[3][3];
     int r[3] = {0, 0, 0}, c[3] = {0, 0, 0}, d1 = 0, d2 = 0;
@@ -21,7 +17,7 @@ int main()
             if (j == 2 - i)
                 d2 += a[i][j];
             c[j] += a[i][j];
-        } 
+        }
     }
     if (r[0] == r[1] && r[1] == r[2])
         p = 0;
@@ -48,5 +44,4 @@ int main()
         return;
     }
     printf("YES\n");
-    return 0;
 }
