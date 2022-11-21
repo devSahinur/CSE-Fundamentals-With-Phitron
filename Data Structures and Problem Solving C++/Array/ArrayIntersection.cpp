@@ -16,13 +16,31 @@ int main()
     {
         cin >> B[i];
     }
+
+    int result[n];
+    int index = 0;
     for (int i = 0; i < n; i++)
     {
-        /* code */
+        for (int j = 0; j < m; j++)
+        {
+            if (A[i] == B[j])
+            {
+                result[index] = B[j];
+                index++;
+            }
+        }
     }
-    
-
-    
+    if (index == 0)
+    {
+        cout << "Empty set";
+    }
+    else
+    {
+        for (int i = 0; i < index; i++)
+        {
+            cout << result[i] << " ";
+        }
+    }
 
     return 0;
 }
