@@ -14,6 +14,10 @@ public:
         Next = NULL;
     }
 };
+void insertAtTail(Node *&head, int val);
+void insertAtHead(Node *&head, int val);
+void display(Node *n);
+int countLength(Node *&head);
 
 void insertAtTail(Node *&head, int val)
 {
@@ -54,6 +58,19 @@ void display(Node *n)
     }
 }
 
+int countLength(Node *&head)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->Next;
+    }
+
+    return count;
+}
+
 int main()
 {
     Node *head = NULL;
@@ -62,39 +79,25 @@ int main()
     // Choice 1: Insertion at Head
     // Choice 2: Insertion at Tail
     // Choice 3: Insertion at a Certain Position
-    cout << "Choice 1: Insertion at Head" << endl<< "Choice 1: Insertion at Tail" << endl<< "Choice 3: Exit"<<endl;
+    cout << "Choice 1: Insertion at Head" << endl
+         << "Choice 1: Insertion at Tail" << endl
+         << "Choice 3: Exit" << endl;
     int choice = 2;
     while (choice == 1 || choice == 2)
     {
         cout << "Enter the Value: ";
         cin >> n;
-        if (choice == 1) insertAtHead(head, n);
-        else if (choice == 2) insertAtTail(head, n);
+        if (choice == 1)
+            insertAtHead(head, n);
+        else if (choice == 2)
+            insertAtTail(head, n);
         cout << "Next Choice: ";
         cin >> choice;
     }
 
-    // insertAtTail(head, 1);
-    // insertAtTail(head, 5);
-    // insertAtTail(head, 8);
-    // insertAtTail(head, 9);
-    // insertAtTail(head, 95);
-
-    // Node *second = new Node();
-    // Node *third = new Node();
-    // Node *fourth = new Node();
-
-    // head->value = 1;
-    // second->value = 5;
-    // third->value = 8;
-    // fourth->value = 9;
-
-    // head->Next = second;
-    // second->Next = third;
-    // third->Next = fourth;
-    // fourth->Next = NULL;
-
+    cout << "Linked List: ";
     display(head);
+    cout<<endl << "Length of the List: " << countLength(head) << endl;
 
     return 0;
 }

@@ -28,7 +28,7 @@ int main()
     for (int i = 1; i < size; i++)
     {
         int key = array[i];
-        // cout<<endl<<"i = "<<i<<" Key = "<<key<<endl;
+        cout<<endl<<"i = "<<i<<" Key = "<<key<<endl;
         int j = i - 1;
         while (array[j] > key && j >= 0)
         {
@@ -37,7 +37,7 @@ int main()
             j--;
         }
         array[j + 1] = key;
-        // printArray(array, size);
+        printArray(array, size);
     }
 
     cout << "After sort: ";
