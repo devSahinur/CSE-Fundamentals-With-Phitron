@@ -20,6 +20,7 @@ void display(Node *n);
 int countLength(Node *&head);
 void insertionAtSpecificPosition(Node *&head, int pos, int val);
 int SearchByValueUique(Node *&head, int key);
+void SearchByValueDuplicate(Node *&head, int key);
 
 void insertAtTail(Node *&head, int val)
 {
@@ -108,6 +109,44 @@ int SearchByValueUique(Node *&head, int key)
     return count;
 }
 
+void SearchByValueDuplicate(Node *&head, int key)
+{
+    Node *temp = head;
+    int size;
+    size = countLength(head);
+    int position[size + 1], k = 1;
+    int count = 1;
+    int flag = 0;
+
+    while (temp != NULL)
+    {
+        if (temp->value == key)
+        {
+            // cout << count << " ";
+            position[k] = count;
+            k++;
+            flag = 1;
+        }
+        temp = temp->Next;
+        count++;
+    }
+
+    if (flag == 0)
+        cout << "The Searched Value is not yet in the List" << endl;
+    else
+    {
+        position[0] = k;
+        cout << "The number is at Poistion: ";
+        for (int i = 0; i < position[0]; i++)
+        {
+            cout << position[i];
+            if (i < position[0] - 1)
+                cout << ",";
+        }
+        cout << endl;
+    }
+}
+
 int main()
 {
     Node *head = NULL;
@@ -117,11 +156,13 @@ int main()
     // Choice 2: Insertion at Tail
     // Choice 3: Insertion at a Certain Position
     // Choice 4: Search a value (Unique List)
+    // Choice 5: Search a value (Duplicateion enabled List)
     // Choice 0: Exit
     cout << "Choice 1: Insertion at Head" << endl
          << "Choice 2: Insertion at Tail" << endl
          << "Choice 3: Insertion at a Certain Position" << endl
          << "Choice 4: Search a value (Unique List)" << endl
+         << "Choice 5: Search a value (Duplicateion enabled List)" << endl
          << "Choice 0: Exit" << endl;
 
     int choice;
@@ -160,6 +201,11 @@ int main()
             {
                 cout << "The number is not yet in the list" << endl;
             }
+            break;
+        case 5:
+            cout << "Enter the Value to Duplicate Search: ";
+            cin >> n;
+            SearchByValueDuplicate(head, n);
             break;
 
         default:
